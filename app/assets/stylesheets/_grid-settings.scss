@@ -1,0 +1,44 @@
+// Edit this file to override Neat default settings (12 columns) and 
+// introduce custom breakpoints
+
+// Neat Overrides
+// $column: 90px;
+// $gutter: 30px;
+// $grid-columns: 12;
+// $max-width: em(1088);
+
+// Simple Neat Breakpoints
+// $medium-screen: em(640);
+// $large-screen: em(860);
+
+// $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
+// $large-screen-up: new-breakpoint(min-width $large-screen 8);
+
+// However, using omega() with an nth-child pseudo selector in a mobile-first workflow 
+// will cause the style to be applied to wider-viewport media queries as well. 
+// Use mutually exclusive media queries, also referred to as media-query splitting,
+// to guarantee that omega() styles are only applied where desired:
+
+$first-breakpoint-value: 640px;
+$second-breakpoint-value: 860px;
+
+$medium-viewport: new-breakpoint(min-width em($first-breakpoint-value) max-width em($second-breakpoint-value - 1) 4);
+$large-viewport: new-breakpoint(min-width em($second-breakpoint-value) 8);
+
+// Then place only shared properties in the default block and 
+// place the rest into mutually exclusive media queries.
+
+// 	.element {	
+
+// 		background-color: $background-color;
+
+// 		@include media($medium-viewport) {
+// 			@include span-columns(6);
+// 			@include omega(2n);
+// 		}
+
+// 		@include media($large-viewport) {
+// 			@include span-columns(4);
+// 			@include omega(3n);
+// 		}
+// 	}

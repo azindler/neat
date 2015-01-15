@@ -6,6 +6,9 @@
 // Helpers
 @import "neat-helpers";
 
+// Modify default grid variables and breakpoints
+@import "grid-settings";
+
 // Grid
 @import "grid/private";
 @import "grid/box-sizing";
