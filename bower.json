@@ -5,6 +5,9 @@
   "ignore": [
     "bin",
     "lib",
+    ".rspec",
+    "*.yml",
+    "License.md",
     ".gitignore",
     "Gemfile",
     "Gemfile.lock",
